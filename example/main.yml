@@ -1,0 +1,7 @@
+---
+- name: set hiera filter
+  shell: "echo '{ \"env\":\"{{ env_identifier }}\", \"account\":\"{{ acc_number }}\"  }' > /tmp/hiera_filter.json"
+
+- name: get variable with using hiera
+  set_fact:
+    env_name: "{{ 'variable_name' | hiera }}"
